@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Download Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <h1 id="portalTitle">Document Download Portal</h1>
+            <p id="portalSubtitle">Pending Documents / Download Center</p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <!-- Table Section -->
+        <section id="tableSection" class="card">
+            <div class="table-header">
+                <h2>Document Records</h2>
+                <button id="downloadExcel" class="btn btn-excel" onclick="downloadExcel()">Download Excel</button>
+            </div>
+            
+            <div class="table-wrapper">
+                <table id="documentTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Item Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Table rows generated dynamically by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Detail Section (Hidden by default) -->
+        <section id="detailSection" class="card hidden">
+            <div class="detail-header">
+                <h2>Document Details</h2>
+                <button id="btnBack" class="btn btn-secondary" onclick="hideDetail()">← Back to List</button>
+            </div>
+            
+            <div class="detail-content">
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <span class="label">Title:</span>
+                        <span id="detailTitle" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Status:</span>
+                        <span id="detailStatus" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Date:</span>
+                        <span id="detailDate" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Item Quantity:</span>
+                        <span id="detailQuantity" class="value"></span>
+                    </div>
+                </div>
+                
+                <div class="detail-item description-item">
+                    <span class="label">Description:</span>
+                    <p id="detailDescription" class="value"></p>
+                </div>
+
+                <div class="detail-actions">
+                    <button id="downloadAll" class="btn btn-primary" onclick="downloadAllZip()">Download All</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
